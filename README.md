@@ -1,0 +1,2 @@
+# SegundoPre
+ejercicios segundo corte
