@@ -1,0 +1,4 @@
+oct. 12, 2023 1:08:02 P. M. com.example.ejerciciouno.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: REGISTRO,Registro estudiante --> 2023-10-12
+oct. 12, 2023 1:08:43 P. M. com.example.ejerciciouno.utils.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Buscar estudiante,Busqueda --> 2023-10-12

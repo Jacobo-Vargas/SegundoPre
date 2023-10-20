@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane prefHeight="281.0" prefWidth="354.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejerciciodos.HelloController">
+   <tabs>
+      <Tab text="Registrar">
+         <content>
+            <VBox alignment="CENTER" prefHeight="236.0" prefWidth="361.0">
+               <children>
+                  <GridPane alignment="CENTER">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="txtNombrePrograma" prefHeight="24.0" prefWidth="169.0" promptText="Nombre de programa">
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="txtCodigoPrograma" promptText="Codigo" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <ComboBox fx:id="cBoxModalidad" prefWidth="150.0" promptText="Modalidad" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                           </GridPane.margin>
+                        </ComboBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="50.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <Button mnemonicParsing="false" onAction="#agregarPrograma" text="Aceptar">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></Button>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+      <Tab text="Buscar">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <GridPane alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="txtCodigobuscarPrograma" prefHeight="24.0" prefWidth="138.0" promptText="Codigo">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#buscarPrograma" text="Buscar" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="25.0" left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <TableView fx:id="tvPrograma" prefHeight="126.0" prefWidth="332.0">
+                    <columns>
+                      <TableColumn fx:id="tcCodigo" prefWidth="61.0" text="Codigo" />
+                      <TableColumn fx:id="tcNombre" prefWidth="141.0" text="Nombre" />
+                        <TableColumn fx:id="tcModalidad" prefWidth="151.0" text="Modalidad" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+         </content></Tab>
+   </tabs>
+</TabPane>

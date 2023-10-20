@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane prefHeight="419.0" prefWidth="498.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejerciciouno.EstudianteController">
+   <tabs>
+      <Tab text="Registrar">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="65.0">
+               <children>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="txtNombre" promptText="Nombre">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin></TextField>
+                        <TextField fx:id="txtCodigo" promptText="Codigo" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin></TextField>
+                        <TextField fx:id="txtNotaUno" promptText="Nota 1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin></TextField>
+                        <TextField fx:id="txtNotaDos" promptText="Nota 2" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin></TextField>
+                        <TextField fx:id="txtNotaTres" promptText="Nota 3" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin></TextField>
+                     </children>
+                  </GridPane>
+                  <Button mnemonicParsing="false" onAction="#aceptarRegistro" text="Aceptar">
+                     <VBox.margin>
+                        <Insets bottom="75.0" />
+                     </VBox.margin></Button>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+      <Tab text="Buscar">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="50.0">
+               <children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="txtBuscarCodigo" promptText="Codigo">
+                           <GridPane.margin>
+                              <Insets left="15.0" right="15.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#buscarEstudiante" text="Buscar" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+                  <TableView fx:id="tvMostarEstudiante" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="tcCodigo" prefWidth="69.0" text="Codigo" />
+                      <TableColumn fx:id="tcNombre" prefWidth="176.0" text="Nombre" />
+                        <TableColumn fx:id="tcNotaUno" prefWidth="87.0" text="Nota 1" />
+                        <TableColumn fx:id="tcNotaDos" prefWidth="78.0" text="Nota 2" />
+                        <TableColumn fx:id="tcNotaTres" prefWidth="87.0" text="Nota 3" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
