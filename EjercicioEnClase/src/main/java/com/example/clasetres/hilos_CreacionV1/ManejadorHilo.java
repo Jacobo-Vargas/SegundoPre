@@ -8,8 +8,8 @@ public class ManejadorHilo implements Runnable {
     HiloServicio1 hiloServicio1;
     HiloServicio2 hiloServicio2;
     HiloServicio3 hiloServicio3;
-    Thread hiloServicio4 = new Thread(this); // this es para que corra en este mismo run(contexto)
-    Thread hiloServicio5 = new Thread(this);
+    Thread hiloServicio4; //= new Thread(this);  this es para que corra en este mismo run de el hilo prncipal (contexto)
+    Thread hiloServicio5;
 
     boolean runHilo4 = true;
     boolean runHilo5 = true;
@@ -25,8 +25,7 @@ public class ManejadorHilo implements Runnable {
 
     public void detenerHiloServicio1() {
 
-        if (hiloServicio1 != null)
-            hiloServicio1.detener();
+        if (hiloServicio1 != null) hiloServicio1.detener();
     }
 
     public void starHiloServicio2() {
@@ -35,8 +34,7 @@ public class ManejadorHilo implements Runnable {
 
     public void detenerHiloServicio2() {
 
-        if (hiloServicio2 != null)
-            hiloServicio2.detener();
+        if (hiloServicio2 != null) hiloServicio2.detener();
     }
 
     public void starHiloServicio3() {
@@ -44,8 +42,7 @@ public class ManejadorHilo implements Runnable {
     }
 
     public void detenerHiloServicio3() {
-        if (hiloServicio3 != null)
-            hiloServicio3.detener();
+        if (hiloServicio3 != null) hiloServicio3.detener();
     }
 
     public void detenerHiloServicio4() {
@@ -59,37 +56,44 @@ public class ManejadorHilo implements Runnable {
 
     @Override
     public void run() {
+
         if (Thread.currentThread() == hiloServicio4) {
-            try {
-                int i = 0;
-                while (runHilo4) {
-                    System.out.println(numero + " * " + i + " = " + numero * i);
-                    i++;
+            runHilo4 = true;
+            int i = 0;
+
+            while (runHilo4) {
+                System.out.println(numero + " * " + i + " = " + numero * i);
+                i++;
+                try {
                     Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
                 }
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
             }
         }
         if (Thread.currentThread() == hiloServicio5) {
-            try {
-                while (runHilo5) {
-                    numero = numero + numero;
-                    System.out.println("numero ahora es:" + numero);
+            runHilo5 = true;
+            while (runHilo5) {
+                numero = numero + numero;
+                System.out.println("numero ahora es:" + numero);
+                try {
                     Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
                 }
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
 
+            }
+
+        }
     }
 
     public void startHiloServicio4() {
+        hiloServicio4 = new Thread(this);
         hiloServicio4.start();
     }
 
     public void startHiloServicio5() {
+        hiloServicio5 = new Thread(this);
         hiloServicio5.start();
     }
 

@@ -3,9 +3,14 @@ module com.example.ejerciciodos {
     requires javafx.fxml;
     requires java.desktop;
 
-
-    opens com.example.ejerciciodos to javafx.fxml;
-    exports com.example.ejerciciodos;
+    exports com.example.ejemplodos;
     exports com.example.ejerciciodos.model;
-    opens com.example.ejerciciodos.model to javafx.fxml;
+    exports com.example.ejerciciodos.util;
+    exports com.example.ejerciciodos;
+
+    opens com.example.ejemplodos to javafx.fxml;
+    opens com.example.ejerciciodos to javafx.fxml;
+    opens com.example.ejerciciodos.util to javafx.graphics;
+    opens com.example.ejerciciodos.model to javafx.graphics;
+
 }
