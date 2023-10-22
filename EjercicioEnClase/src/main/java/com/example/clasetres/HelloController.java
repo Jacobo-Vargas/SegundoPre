@@ -76,6 +76,7 @@ public class HelloController {
         principal.startHiloServicio4();
     }
 
+    public void nada(){
 
-
+    }
 }

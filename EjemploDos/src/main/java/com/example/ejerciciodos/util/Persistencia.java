@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 
 public class Persistencia {
 
-    private static final String RUTA_XML = "src/main/resources/persistencia/registros.xml";
+    private static final String RUTA_XML = "EjemploDos/src/main/resources/persistencia/registros.xml";
 
     public static ArrayList<String> cargarPropiedades(){
 
